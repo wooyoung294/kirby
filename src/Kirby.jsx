@@ -262,7 +262,7 @@ function KirbyModel({
     })
 
     return (
-        <group ref={group} scale={scale}>
+        <group ref={group} scale={scale} raycast={null}>
             <primitive object={scene} />
         </group>
     )
@@ -290,12 +290,12 @@ export default function Kirby() {
                 }}
             >
                 <Canvas
-                    camera={{ position: cameraPos, fov: 50 }}
-                    gl={{ toneMapping: ACESFilmicToneMapping, toneMappingExposure: 1.1 }}
+                    camera={{position: cameraPos, fov: 50}}
+                    gl={{toneMapping: ACESFilmicToneMapping, toneMappingExposure: 1.1}}
                 >
-                    <ambientLight intensity={0.7} />
-                    <directionalLight position={[3, 5, 2]} intensity={2.2} />
-                    <Environment preset="sunset" />
+                    <ambientLight intensity={0.7}/>
+                    <directionalLight position={[3, 5, 2]} intensity={2.2}/>
+                    <Environment preset="sunset"/>
 
                     <KirbyModel
                         scale={1}
@@ -312,23 +312,21 @@ export default function Kirby() {
                         stepSize={0.03} // 스텝 사이즈(예: 0.25 유닛). 0이면 비활성화
                     />
 
-                    <OrbitControls makeDefault target={target} enableZoom={false}/>
+                    <OrbitControls makeDefault target={target} enableRotate={false} enableZoom={false} enablePan={false}/>
                 </Canvas>
             </div>
-            <h2 className="action-text">Hey Kirby!</h2>
-            <button
-                className="action-btn"
-                onClick={() => setJumpKey(k => (k ?? 0) + 1)}
-            >
-                Jump
-            </button>
-            <button
-                className="action-btn"
-                style={{ left: '55%' }}
-                onClick={() => setWalkKey(k => (k ?? 0) + 1)}
-            >
-                Walk
-            </button>
+            <div className="ui">
+                <h2 className="action-text">
+                    Hey K<span className="accent">i</span>rby
+                </h2>
+                <div className="actions">
+                    <button className="action-btn" onClick={() => setJumpKey(k => (k ?? 0) + 1)}
+                    >Jump</button>
+                    <button className="action-btn" onClick={() => setWalkKey(k => (k ?? 0) + 1)}
+                    >Walk</button>
+                </div>
+            </div>
+
         </>
     )
 }
