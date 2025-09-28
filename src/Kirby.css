@@ -1,0 +1,22 @@
+.action-text{
+    font-family: 'YFavorite', system-ui, sans-serif;
+    width: max-content;
+    height: 40px;
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.action-btn{
+    font-family: 'YFavorite', system-ui, sans-serif;
+    font-weight: bold;
+    width: 80px;
+    height: 40px;
+    position: absolute;
+    top: 10%;
+    left: 45%;
+    border: 1px solid #f85a5a;
+    border-radius: 10px;
+    background-color: #ed0000;
+    transform: translateX(-50%);
+}

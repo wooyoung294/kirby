@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'YFavorite';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/YOnepickTTF-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+.base-layer{
+    background: #f85a5a;
+    height: 100vh;
+}
+.first-layer{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20rem;
+}
+.hello-text{
+    color: white;
+    font-family: 'YFavorite', system-ui, sans-serif;
+}
+.hello-text>span>div:nth-child(2){
+    color: #ed0000;
+}
